@@ -1,0 +1,305 @@
+/* Resets básicos para garantir consistência entre navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Definindo variáveis CSS para as cores (Tema Escuro) */
+:root {
+    --cor-fundo-principal: #1A2B3C; /* Azul Escuro - Fundo geral, cabeçalho, rodapé */
+    --cor-fundo-secao-alternada: #2A3F50; /* Cinzento Suave - Fundo de seções alternadas e cards */
+    --cor-destaque: #20C997; /* Verde Ciano - Destaque, vibe tech */
+    --cor-texto-claro: #F8F9FA; /* Branco Suave - Textos principais e títulos */
+    --cor-texto-secundario: #BDC8D3; /* Cinzento Claro - Textos de apoio, bordas */
+    --cor-link-hover: #17B280; /* Tom mais escuro do verde ciano para hover */
+    --cor-sucesso-botao: #28a745; /* Mantido para botões de formulário */
+    --cor-sucesso-botao-hover: #218838;
+    --cor-fundo-body: #131826;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--cor-fundo-body); /* Fundo geral escuro */
+    color: var(--cor-texto-claro); /* Cor principal do texto (claro) */
+}
+
+/* Cabeçalho */
+.cabecalho {
+    background-color: var(--cor-fundo-principal); /* Azul Escuro */
+    color: var(--cor-texto-claro); /* Texto branco suave */
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.3); /* Sombra mais visível em fundo escuro */
+}
+
+.cabecalho .menu-navegacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.cabecalho .logo {
+    color: var(--cor-texto-claro); /* Logo branco suave */
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.cabecalho ul {
+    list-style: none;
+    display: flex;
+}
+
+.cabecalho ul li {
+    margin-left: 20px;
+}
+
+.cabecalho ul li a {
+    color: var(--cor-texto-claro); /* Links brancos suaves */
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cabecalho ul li a:hover {
+    background-color: #2A3F50; /* Um tom ligeiramente mais claro do azul primário para o hover */
+    border-radius: 5px;
+    color: var(--cor-destaque); /* Destaque o link com a cor verde ciano no hover */
+}
+
+/* Seções gerais */
+.conteudo-principal section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* O fundo padrão será var(--cor-fundo-principal) do body, a menos que sobrescrito */
+}
+
+.conteudo-principal section:nth-child(even) { /* Estilo para seções alternadas */
+    background-color: var(--cor-fundo-secao-alternada); /* Cinzento Suave */
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--cor-texto-claro); /* Títulos em branco suave */
+}
+
+/* Seção de Apresentação (Hero) */
+.apresentacao {
+    background-color: var(--cor-fundo-body); /* Azul Escuro para a seção principal */
+    color: var(--cor-texto-claro); /* Texto branco suave */
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.apresentacao h1, .apresentacao p {
+    color: var(--cor-texto-claro); /* Garante que o texto da apresentação seja branco suave */
+}
+
+.foto-perfil {
+    width: 200px; 
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover; /* Garante que a imagem preencha o círculo sem distorcer */
+    margin-bottom: 30px; /* Espaço abaixo da foto */
+    border: 5px solid var(--cor-destaque); /* Uma borda para destaque */
+    box-shadow: 0 0 20px rgba(32, 201, 151, 0.5); /* Sombra para um efeito glow sutil */
+}
+
+.btn-cta {
+    display: inline-block;
+    background-color: var(--cor-destaque); /* Verde Ciano */
+    color: var(--cor-texto-claro); /* Texto branco suave */
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.btn-cta:hover {
+    background-color: var(--cor-link-hover); /* Tom mais escuro do Verde Ciano */
+}
+
+/* Seção de Projetos */
+.grade-projetos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card-projeto {
+    background-color: var(--cor-fundo-secao-alternada); /* Fundo dos cards em Cinzento Suave */
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25); /* Sombra mais visível em fundo escuro */
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-projeto:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); /* Sombra mais forte no hover */
+}
+
+.card-projeto img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.card-projeto h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--cor-texto-claro); /* Título do projeto em branco suave */
+}
+
+.card-projeto p {
+    padding: 0 15px;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    color: var(--cor-texto-secundario); /* Descrição em Cinzento Claro */
+}
+
+.links-projeto a {
+    display: inline-block;
+    background-color: var(--cor-destaque); /* Botões em Verde Ciano */
+    color: var(--cor-texto-claro); /* Texto branco suave */
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+}
+
+.links-projeto a:hover {
+    background-color: var(--cor-link-hover);
+}
+
+.svgs{
+    text-align: center;
+}
+
+.svgs li{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin: 50px;
+}
+
+/* --- Seção de Contato (Formulário) --- */
+
+.secao-contato {
+    background-color: var(--cor-fundo-secao-alternada); /* Usa a cor de seção alternada */
+}
+
+#formContato {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--cor-fundo-principal); /* Fundo do formulário mais escuro */
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+.form-grupo {
+    margin-bottom: 20px;
+}
+
+.form-grupo label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--cor-texto-secundario);
+}
+
+.form-grupo input,
+.form-grupo textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--cor-texto-secundario);
+    background-color: var(--cor-fundo-secao-alternada);
+    color: var(--cor-texto-claro);
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+    resize: vertical;
+}
+
+.form-grupo input:focus,
+.form-grupo textarea:focus {
+    outline: none;
+    border-color: var(--cor-destaque);
+}
+
+.btn-enviar {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: var(--cor-sucesso-botao); /* Cor de sucesso para o botão de enviar */
+    color: var(--cor-texto-claro);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-enviar:hover {
+    background-color: var(--cor-sucesso-botao-hover);
+}
+
+/* Garante que o rodapé não seja afetado */
+footer {
+    padding-top: 40px;
+}
+
+
+/* Rodapé */
+.rodape {
+    background-color: var(--cor-fundo-principal); /* Azul Escuro */
+    color: var(--cor-texto-claro); /* Texto branco suave */
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 0.9rem;
+}
+
+.rodape p {
+    margin-bottom: 5px;
+}
+
+/* Estilos para os ícones de contato no rodapé */
+.rodape .contato-lista {
+    display: flex; /* Transforma a lista em um container flexível */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    list-style: none; /* Remove os marcadores de lista */
+    padding: 0; /* Remove padding padrão da lista */
+    margin-bottom: 20px; /* Adiciona espaço abaixo da lista de ícones */
+}
+
+.rodape .contato-lista li {
+    margin: 0 15px; /* Espaçamento entre os ícones */
+}
+
+.rodape .contato-lista li i {
+    font-size: 1.8rem; /* Ajusta o tamanho dos ícones */
+    color: var(--cor-texto-secundario); /* Cor inicial dos ícones (Cinzento Claro) */
+    transition: color 0.3s ease; /* Transição suave para a mudança de cor */
+}
+
+.rodape .contato-lista li i:hover {
+    color: var(--cor-destaque); /* Muda para a cor de destaque (Verde Ciano) ao passar o mouse */
+    cursor: pointer;
+}

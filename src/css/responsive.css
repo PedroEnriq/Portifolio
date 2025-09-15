@@ -1,0 +1,73 @@
+/* --- Responsividade (Media Queries) --- */
+
+@media (max-width: 768px) {
+    .cabecalho .menu-navegacao {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cabecalho ul {
+        flex-direction: column;
+        margin-top: 15px;
+    }
+
+    .cabecalho ul li {
+        margin: 10px 0;
+    }
+
+    .secao-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .secao-hero p {
+        font-size: 1rem;
+    }
+
+    .grade-projetos {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    }
+
+    .conteudo-principal section {
+        padding: 40px 15px;
+    }
+
+    .svgs li{
+        width: 80px;
+        height: 80px;
+        margin: 30px;
+    }
+
+    h1, h2 {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cabecalho .logo {
+        font-size: 1.5rem;
+    }
+
+    .cabecalho ul li a {
+        font-size: 0.9rem;
+    }
+
+    .btn-cta {
+        padding: 12px 25px;
+    }
+
+    .card-projeto img {
+        height: 180px;
+    }
+
+    .links-projeto a {
+        display: block;
+        margin: 10px auto;
+        max-width: 150px;
+    }
+
+    .svgs li{
+        width: 60px;
+        height: 60px;
+        margin: 20px;
+    }
+}
