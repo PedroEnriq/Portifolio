@@ -39,4 +39,13 @@ document.addEventListener('DOMContentLoaded', () => {
         sectionObserver.observe(section);
     });
 
+    // Funcionalidade de menu para mobile
+    const menuBtn = document.querySelector('.showmenu-btn');
+    const navMenu = document.querySelector('.nav-menu');
+
+    menuBtn.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        menuBtn.classList.toggle('active');
+    });
+
 });

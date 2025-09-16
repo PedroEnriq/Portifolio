@@ -15,6 +15,24 @@
         margin: 10px 0;
     }
 
+    .cabecalho .nav-menu{
+        flex-direction: column;
+        margin-top: 15px;
+        max-height: 0; /* Começa com altura zero */
+        overflow: hidden; /* Esconde o conteúdo que transborda */
+        transition: max-height 0.4s ease-in-out; /* Adiciona a transição */
+        width: 100%;
+    }
+
+    .cabecalho .nav-menu.active {
+        max-height: 200px; /* Altura suficiente para mostrar todo o menu */
+    }
+
+    .showmenu-btn{
+        display:inline;
+    }
+
+
     .secao-hero h1 {
         font-size: 2.5rem;
     }

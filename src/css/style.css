@@ -45,6 +45,21 @@ body {
     padding: 0 20px;
 }
 
+.showmenu-btn{
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--cor-texto-claro);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.showmenu-btn.active{
+        transform: rotate(180deg);
+        transition: 0.2s;
+}
+
 .cabecalho .logo {
     color: var(--cor-texto-claro); /* Logo branco suave */
     text-decoration: none;
