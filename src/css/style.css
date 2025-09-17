@@ -47,12 +47,14 @@ body {
 
 .showmenu-btn{
     display: none;
-    background: transparent;
+    background-color: var(--cor-fundo-secao-alternada);
     border: none;
+    border-radius: 6px;
     color: var(--cor-texto-claro);
     font-size: 1.5rem;
     cursor: pointer;
     transition: 0.2s;
+    width: 60px;
 }
 
 .showmenu-btn.active{
